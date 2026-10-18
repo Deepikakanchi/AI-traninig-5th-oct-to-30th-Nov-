@@ -1,0 +1,1 @@
+file contains thoeryof azure ml architecture created azure data base storage and azure ml account to deploy and work with the model codes 
