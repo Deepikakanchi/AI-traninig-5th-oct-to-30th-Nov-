@@ -1,0 +1,19 @@
+-- 21. Display stations located in Hyderabad or Bengaluru.
+SELECT *
+FROM c
+WHERE c.city = "Hyderabad" OR c.city = "Bengaluru"
+
+-- 22. Display stations whose zone is North or South.
+SELECT *
+FROM c
+WHERE c.zone = "North" OR c.zone = "South"
+
+-- 23. Display stations that are Fast or have revenue above 20000.
+SELECT *
+FROM c
+WHERE c.status = "Fast" OR c.revenue > 20000
+
+-- 24. Display stations located in Mumbai, Delhi, or Chennai.
+SELECT *
+FROM c
+WHERE c.city = "Mumbai" OR c.city = "Delhi" OR c.city = "Chennai"

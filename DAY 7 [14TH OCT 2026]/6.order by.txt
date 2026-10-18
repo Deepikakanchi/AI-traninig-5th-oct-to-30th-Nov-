@@ -1,0 +1,24 @@
+-- 25. Display all stations ordered by revenue from lowest to highest.
+SELECT *
+FROM c
+ORDER BY c.revenue ASC
+
+-- 26. Display all stations ordered by revenue from highest to lowest.
+SELECT *
+FROM c
+ORDER BY c.revenue DESC
+
+-- 27. Display stations ordered by daily sessions from highest to lowest.
+SELECT *
+FROM c
+ORDER BY c.daily_sessions DESC
+
+-- 28. Display stations ordered by uptime percentage from lowest to highest.
+SELECT *
+FROM c
+ORDER BY c.uptime_percentage ASC
+
+-- 29. Display stations ordered first by city and then by revenue.
+SELECT *
+FROM c
+ORDER BY c.city ASC, c.revenue ASC

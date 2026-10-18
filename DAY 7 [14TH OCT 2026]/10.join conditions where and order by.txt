@@ -1,0 +1,59 @@
+
+-- 47. Find the top five stations based on revenue.
+SELECT TOP 5 *
+FROM c
+ORDER BY c.revenue DESC
+
+
+-- 48. Find the top three stations based on daily sessions.
+SELECT TOP 3 *
+FROM c
+ORDER BY c.daily_sessions DESC
+
+
+-- 49. Display Active Fast stations ordered by revenue from highest to lowest.
+SELECT *
+FROM c
+WHERE c.status = "Active"
+  AND c.station_type = "Fast"
+ORDER BY c.revenue DESC
+
+
+-- 50. Display stations whose revenue is greater than 12000
+-- and uptime is greater than 97, ordered by revenue descending.
+SELECT *
+FROM c
+WHERE c.revenue > 12000
+  AND c.uptime_percent > 97
+ORDER BY c.revenue DESC
+
+
+-- 51. Display Hyderabad or Bengaluru stations having more than 30 daily sessions.
+SELECT *
+FROM c
+WHERE (c.city = "Hyderabad" OR c.city = "Bengaluru")
+  AND c.daily_sessions > 30
+
+
+-- 52. Display Maintenance stations ordered by uptime percentage
+-- from lowest to highest.
+SELECT *
+FROM c
+WHERE c.status = "Maintenance"
+ORDER BY c.uptime_percent ASC
+
+
+-- 53. Display station_name, city, revenue, and uptime_percent
+-- for stations whose revenue is greater than 15000.
+SELECT c.station_name, c.city, c.revenue, c.uptime_percent
+FROM c
+WHERE c.revenue > 15000
+
+
+-- 54. Display Fast stations having a capacity of at least 120,
+-- ordered by capacity from highest to lowest.
+SELECT *
+FROM c
+WHERE c.station_type = "Fast"
+  AND c.capacity_kw >= 120
+ORDER BY c.capacity_kw DESC

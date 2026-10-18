@@ -1,0 +1,234 @@
+-- Section A — Basic SELECT
+-- 1. Display all documents in the container.
+SELECT *FROM c 
+-- 2. Display only guest_name , city , and hotel_name .
+SELECT c.guest_name,c.city,c.hotel_name FROM c
+-- 3. Display guest_name , room_type , nights , and booking_amount .
+SELECT c.guest_name,c.room_type,c.nights,c.booking_amount 
+FROM c 
+-- 4. Display id , guest_name , and booking_status .
+SELECT c.id,c.guest_name,c.booking_status
+FROM c 
+-- Section B — WHERE Filters
+-- 5. Display all bookings from Hyderabad.
+SELECT c.city From c 
+WHERE c.city="Hyderabad"
+-- 6. Display all bookings from Mumbai.
+SELECT c.city FROM c 
+WHERE c.city="Mumbai"
+-- 7. Display all bookings with status Completed .
+SELECT c.status FROM c 
+WHERE c.status="Completed"
+-- 8. Display all Suite bookings.
+
+-- 9. Display all bookings with room type Executive .
+SELECT c.room_type FROM c 
+WHERE c.room_type="Executive"
+-- Section C — Numeric Filters
+-- 10. Display bookings where booking_amount is greater than 20000 .
+SELECT *FROM c 
+WHERE c.booking_amount>20000
+-- 11. Display bookings where room_rate is greater than 6000 .
+SELECT *FROM c 
+WHERE c.room_rate > 6000
+
+-- 12. Display bookings where nights is greater than 3 .
+
+SELECT *FROM c 
+WHERE c.nights>3 
+
+-- 13. Display bookings where rating is below 4.2 .
+SELECT *FROM c 
+WHERE c.rating<4.2
+
+-- 14. Display bookings where booking_amount is between 8000 and 25000.
+SELECT *FROM c 
+WHERE c.booking_amount >8000 AND booking_amount<25000
+
+-- 15. Display bookings where room_rate is below 4000 .
+SELECT *FROM c 
+WHERE c.room_rate<4000
+
+-- Section D — AND Conditions
+-- 16. Display bookings that are Confirmed and have a booking amount greater than 15000 .
+SELECT *FROM c 
+WHERE c.booking_status="Confirmed" AND c.booking_amount>15000
+
+-- 17. Display Mumbai bookings where the room type is Suite .
+SELECT *FROM c 
+WHERE  c.city="Mumbai" AND c.room_type="Suite"
+
+-- 18. Display bookings where nights > 2 and rating > 4.5 .
+
+SELECT *FROM c 
+WHERE  c.nights>2 AND c.rating >4.5 
+
+-- 19. Display Completed bookings where booking_amount > 10000
+SELECT *FROM c
+WHERE c.booking_status="Completed" AND  c.booking_amount>10000
+ 
+-- 20. Display Standard rooms where room_rate < 3500 .
+SELECT * FROM c
+WHERE c.room_type="Standard" AND c.room_rate<3500
+
+-- Section E — OR Conditions
+-- 21. Display bookings from Hyderabad or Bengaluru.
+SELECT * FROM c
+WHERE c.city="Hyderbad" OR c.city="Bengaluru"
+
+-- 22. Display bookings from Mumbai or Delhi.
+SELECT * FROM c
+WHERE c.city="Mumbai" OR c.city="Delhi"
+
+
+-- 23. Display bookings where room type is Suite or Executive .
+SELECT * FROM c
+WHERE c.room_type="Suite" OR c.room_type="Executive"
+
+
+-- 24. Display bookings whose status is Completed or Confirmed
+SELECT * FROM c
+WHERE c.status="Completed" OR c.status="Confirmed"
+
+
+-- 25. Display bookings from Chennai, Pune, or Kochi.
+SELECT * FROM c
+WHERE c.city="Mumbai" OR c.city="Delhi"
+
+-- Section F — ORDER BY
+-- 26. Display all bookings ordered by booking_amount from lowest to highest.
+SELECT *FROM c
+ORDER BY c.booking_amount ASEC
+
+-- 27. Display all bookings ordered by booking_amount from highest to lowest.
+SELECT *FROM c
+ORDER BY c.booking_amount DSC
+
+-- 28. Display bookings ordered by rating from highest to lowest.
+SELECT *FROM c
+ORDER BY c.rating DSC
+
+-- 29. Display bookings ordered by nights from highest to lowest.
+SELECT *FROM c
+ORDER BY c.nights DSC
+
+-- 30. Display bookings ordered first by city and then by booking_amount .
+SELECT *FROM c
+ORDER BY c.city ASEC AND c.booking_amount  DSC
+
+
+-- Section G — COUNT
+-- 31. Count the total number of bookings.
+SELECT COUNT(*) AS totalbookings
+FROM c 
+
+-- 32. Count the number of Confirmed bookings.
+SELECT COUNT(*) AS confirmedbookings
+FROM c 
+WHERE c.status="Confirmed"
+
+-- 33. Count the number of Completed bookings.
+SELECT COUNT(*) AS confirmedbookings
+FROM c 
+WHERE c.status="Confirmed"
+
+-- 34. Count the number of Suite bookings.
+SELECT COUNT(*) AS Suitebookings
+FROM c 
+WHERE c.booking_type="Suite"
+
+-- 35. Count the number of bookings in Pune.
+SELECT COUNT(*) AS punebookings
+FROM c 
+WHERE c.city="Pune"
+
+-- Section H — GROUP BY
+
+-- 36. Count bookings by city.
+SELECT c.city,COUNT(*) as bookingbycity
+FROM c
+GROUP BY c.city
+
+-- 37. Count bookings by room_type .
+SELECT c.room_type,COUNT(*) as bookingbycity
+FROM c
+GROUP BY c.city
+
+-- 38. Count bookings by booking_status .
+SELECT c.booking_status,COUNT(*) as bookingbycity
+FROM c
+GROUP BY c.booking_status
+
+
+-- 39. Find total booking amount for each city.
+SELECT c.city, SUM(c.booking_amount) as bookingamountforcity
+FROM c
+GROUP BY c.city
+
+
+-- 40. Find average booking amount for each room type.
+SELECT c.city, AVG(c.booking_amount) as avgbookingamountforcity
+FROM c
+GROUP BY c.city
+
+-- 41. Find average rating for each city.
+SELECT c.city, AVG(c.rating) as avgratingforcity
+FROM c
+GROUP BY c.city
+
+-- 42. Find total nights booked for each city.
+SELECT c.city, SUM(c.nights) as sumnightsforcity
+FROM c
+GROUP BY c.city
+
+-- 43. Find average room rate for each room type.
+SELECT c.room_type, AVG(c.room_rate) as avgroomrate
+FROM c
+GROUP BY c.room_type
+
+
+-- Section I — GROUP BY with Filters
+-- 44. Find total booking amount by city using only Confirmed bookings.
+SELECT c.city, SUM(c.booking_amount)as totalbookingamount
+FROM c
+WHERE c.status='Confirmed'
+GROUP BY c.city
+
+
+-- 45. Count Completed bookings in each city.
+SELECT c.city, COUNT(*) AS completebookingstotal
+FROM c
+WHERE c.status='Completed'
+GROUP BY c.city
+
+
+-- 46. Find average booking amount by city for bookings above 8000 .
+
+SELECT c.city, AVG(c.booking_amount)as avgbookingamount
+FROM c
+WHERE c.status='Confirmed'
+GROUP BY c.city
+-- 47. Find total nights grouped by room type.
+-- Section J — Combined Queries
+-- 48. Find the top five bookings by booking_amount .
+-- 49. Find the top three bookings by rating .
+-- 50. Display Confirmed Suite bookings ordered by booking_amount descending.
+-- 51. Display bookings where booking_amount > 15000 and rating > 4.5 , ordered by
+-- booking amount descending.
+-- 52. Display Hyderabad or Bengaluru bookings where nights > 2 .
+-- 53. Display Cancelled bookings ordered by rating from lowest to highest.
+-- 54. Display guest_name , city , hotel_name , booking_amount , and rating for bookings
+-- above 20000 .
+-- 55. Display Executive room bookings where room_rate >= 6000 , ordered by room rate
+-- descending.
+-- Section K — Business Questions
+-- 56. Write a query to determine which city has the highest total booking amount.
+-- 57. Write a query to determine which booking has the highest booking amount.
+-- 58. Write a query to determine which booking has the highest rating.
+-- 59. Write a query to determine which room type has the highest average booking amount.
+-- 60. Write a query to determine which city has the highest total number of nights booked.
+-- 61. Write a query to determine how many bookings are currently Cancelled.
+-- 62. Write a query to determine which city has the highest number of Completed bookings.
+-- 63. Write a query to determine which hotel has the highest booking amount.
+-- 64. Write a query to determine which room type has the highest average room rate.
+-- 65. Write a query to determine the total booking amount for all Confirmed bookings

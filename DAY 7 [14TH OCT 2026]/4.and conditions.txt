@@ -1,0 +1,25 @@
+-- 16. Display stations that are Fast and Active.
+SELECT *
+FROM c
+WHERE c.speed = "Fast" AND c.status = "Active"
+
+-- 17. Display Hyderabad stations whose revenue is above 10000.
+SELECT *
+FROM c
+WHERE c.city = "Hyderabad" AND c.revenue > 10000
+
+-- 18. Display stations whose capacity is greater than 100
+-- and daily sessions are greater than 40.
+SELECT *
+FROM c
+WHERE c.capacity_kw > 100 AND c.daily_sessions > 40
+
+-- 19. Display Active stations whose uptime is greater than 97.
+SELECT *
+FROM c
+WHERE c.status = "Active" AND c.uptime > 97
+
+-- 20. Display Standard stations whose revenue is below 10000.
+SELECT *
+FROM c
+WHERE c.speed = "Standard" AND c.revenue < 10000

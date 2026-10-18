@@ -1,0 +1,12 @@
+-- 1. Display all documents in the container.
+-- SELECT *FROM c
+
+-- -- 2. Display only station_name , city , and status .
+-- SELECT c.station_name , c.city ,  c.status
+-- FROM c 
+-- -- 3. Display station_name , capacity_kw , daily_sessions , and revenue .
+-- SELECT c.station_name , c.capacity_kw , c.daily_sessions , c.revenue
+-- FROM c
+-- -- 4. Display id and station_name for every station.
+SELECT c.id , c.station_name
+FROM c

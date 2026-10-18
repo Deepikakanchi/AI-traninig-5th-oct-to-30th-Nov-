@@ -1,0 +1,27 @@
+30. Count the total number of charging stations.
+SELECT VALUE COUNT(1)
+FROM c
+
+
+31. Count the number of Active stations.
+SELECT VALUE COUNT(1)
+FROM c
+WHERE c.status = "Active"
+
+
+32. Count the number of Fast stations.
+SELECT VALUE COUNT(1)
+FROM c
+WHERE c.station_type = "Fast"
+
+
+33. Count the number of stations in Pune.
+SELECT VALUE COUNT(1)
+FROM c
+WHERE c.city = "Pune"
+
+
+34. Count the number of stations whose revenue is greater than 15000.
+SELECT VALUE COUNT(1)
+FROM c
+WHERE c.revenue > 15000

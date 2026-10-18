@@ -1,0 +1,25 @@
+43. Find total revenue by city using only Active stations.
+SELECT c.city, SUM(c.revenue) AS total_revenue
+FROM c
+WHERE c.status = "Active"
+GROUP BY c.city
+
+
+44. Count Fast stations in each city.
+SELECT c.city, COUNT(1) AS fast_station_count
+FROM c
+WHERE c.station_type = "Fast"
+GROUP BY c.city
+
+
+45. Find average revenue by city for stations whose revenue is above 8000.
+SELECT c.city, AVG(c.revenue) AS average_revenue
+FROM c
+WHERE c.revenue > 8000
+GROUP BY c.city
+
+
+46. Find total daily sessions grouped by station type.
+SELECT c.station_type, SUM(c.daily_sessions) AS total_daily_sessions
+FROM c
+GROUP BY c.station_type

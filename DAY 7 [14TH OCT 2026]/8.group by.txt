@@ -1,0 +1,46 @@
+35. Count the number of stations in each city.
+SELECT c.city, COUNT(1) AS station_count
+FROM c
+GROUP BY c.city
+
+
+36. Count the number of stations by station_type.
+SELECT c.station_type, COUNT(1) AS station_count
+FROM c
+GROUP BY c.station_type
+
+
+37. Count the number of stations by status.
+SELECT c.status, COUNT(1) AS station_count
+FROM c
+GROUP BY c.status
+
+
+38. Find the total revenue for each city.
+SELECT c.city, SUM(c.revenue) AS total_revenue
+FROM c
+GROUP BY c.city
+
+
+39. Find the average revenue for each station type.
+SELECT c.station_type, AVG(c.revenue) AS average_revenue
+FROM c
+GROUP BY c.station_type
+
+
+-- 40. Find the average uptime percentage for each city.
+SELECT c.city, AVG(c.uptime_percent) AS average_uptime
+FROM c
+GROUP BY c.city
+
+
+41. Find the total number of daily sessions for each city.
+SELECT c.city, SUM(c.daily_sessions) AS total_daily_sessions
+FROM c
+GROUP BY c.city
+
+
+42. Find the average charging capacity for each station type.
+SELECT c.station_type, AVG(c.capacity_kw) AS average_capacity_kw
+FROM c
+GROUP BY c.station_type

@@ -1,0 +1,16 @@
+Section B — WHERE Filters
+5. Display all stations in Hyderabad.
+SELECT *From c
+WHERE c.city="Hyderabad"
+6. Display all stations in Mumbai.
+SELECT *From c
+WHERE c.city="Mumbai"
+7. Display all stations whose status is Maintenance .
+SELECT *From c
+WHERE c.status="Maintenance"
+8. Display all Fast charging stations.
+SELECT *From c
+WHERE c.station_type="Fast"
+9. Display all stations whose connector type is CCS2 
+SELECT *From c
+WHERE c.connector_type="CCS2"
