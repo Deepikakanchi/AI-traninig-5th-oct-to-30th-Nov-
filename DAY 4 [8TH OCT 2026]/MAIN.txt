@@ -1,0 +1,2 @@
+covered theory micto services architecture docker basics  docker commands to practice 
+  
