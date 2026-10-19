@@ -1,0 +1,11 @@
+from fastapi import FastAPI
+
+app = FastAPI()
+
+@app.get("/")
+def home():
+    return {"message":"hello grom fast api"}
+
+@app.get("/hello/{name}")
+def hello(name:str):
+    return {"message":f"hello {name}"}
