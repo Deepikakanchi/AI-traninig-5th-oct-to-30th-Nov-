@@ -1,0 +1,22 @@
+import Product from "./Product"
+
+function App(){
+  const products=[
+    {id:1,name:"wireless Mouse",price:1200},
+    {id:2,name:"key board",price:2500},
+    {id:3,name:"monitor",price:12000}
+  ]
+  return(
+    <div>
+      <h1>Product list</h1>
+      {products.map((product)=>(
+        <Product
+        key={product.id}
+        name={product.name}
+        price={product.price}
+        />
+      ))}
+    </div>
+  )
+}
+export default App
