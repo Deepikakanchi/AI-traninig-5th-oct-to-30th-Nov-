@@ -1,0 +1,30 @@
+B5. What is the difference between cloud infrastructure and on-premises infrastructure?
+Answer:
+onpremises infrastructure : you have ur own physical hardware like servers ,cooling systems,required power ) in ur own building 
+you have all responsibilty of charge to those things like maintence and securiry and any more updated requirements 
+
+cloud infrastucture : you take rent from 3rd part resouces provider like(microsoft azure) over the internet, they manges allthe 
+responsibity for like hardware systems,cooling everything we just pat for waht we used.
+
+B6. What is an Azure subscription?
+Answer:
+like its we use to mange costs ,resourese units and acces control of the azure account . its like billing account or folder.
+its like a container that have all  azure resourses.
+
+B7. What is an Azure Resource Group?
+Answer:
+it a logical folder insid azure ,we pur realted resourses in it like database ,storage,web app and all so we can manage ansd
+work together .like if we delete the resourse group everythinh in the inside it gets deleted too,which is used to make things easy
+
+B8. Arrange these in the correct hierarchy: Resource, Subscription, Resource Group.
+Answer:
+sucscription -> resourse group -> resourse  
+a subscriptioin have all the resourse groups, and the resourse group hold the individual resourses like database and vm all
+
+
+ 
+B9. Why might a company place related Azure resources in the same Resource Group?
+Answer:
+to manage everything together and easy to update and delete everything if all done , like we all team neded the acess to the 
+resourse all team can access to the whole resourse group once insted of setting permison to every single file and easy to manage the 
+cost for vill like groupbill type.

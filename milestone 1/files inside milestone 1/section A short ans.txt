@@ -1,0 +1,19 @@
+Short concept: State which of the three supplied files is structured, semi-structured and unstructured, and give
+one reason for each.
+
+Answer:
+
+structured ->urban_mobility.csv
+data in the rows and colums and easy to work 
+ex: sql tables,excel sheet,employee records
+
+
+semi-structured->equipment_events.json
+data doesnot follow a table format but has keys,values and tags to use
+ex:json,emial,xson,
+usually we store in azure cosmos db
+
+unstructure -> coastal_monitoring_log.txt
+data doesnot have the predefined structre of rows colums or consistent fields 
+examples:images,videos,audio,pdf,text documents
+

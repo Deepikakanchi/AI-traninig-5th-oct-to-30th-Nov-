@@ -1,0 +1,17 @@
+C15. Normalization question: Suppose supplier_name, supplier_city, part_name, part_category, po_id and
+quantity were all stored repeatedly in one large table. Identify at least two repeated facts and suggest how you
+would separate the data into tables
+
+Repeated Facts:
+1.parts details(part_name,part_category):are repeated every time,if part ordered n times the part name and part category 
+comes n times 
+2.suppliers deails(supplier_name,supplier_city)are repeated every time ,if supplier provide n diffenet parts,the name and city
+comes for the n times 
+
+separe the data into tables:
+
+to fix this we are doing 4 tabels 
+like 1st one is supppliers 
+2nd parts
+3rd purchase_orders
+4.purchase order items 
