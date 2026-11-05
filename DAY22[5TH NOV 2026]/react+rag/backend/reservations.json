@@ -1,0 +1,18 @@
+[
+    {
+        "book_id": 101,
+        "customer_name": "Ahmed"
+    },
+    {
+        "book_id": 101,
+        "customer_name": "deepika kanchi"
+    },
+    {
+        "book_id": 105,
+        "customer_name": "dinesh"
+    },
+    {
+        "book_id": 105,
+        "customer_name": "deepika"
+    }
+]

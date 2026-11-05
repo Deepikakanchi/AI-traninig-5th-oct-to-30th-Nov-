@@ -1,0 +1,37 @@
+[
+    {
+        "id": 101,
+        "title": "Python Crash Course",
+        "author": "Eric Matthes",
+        "category": "Programming",
+        "available_copies": 1
+    },
+    {
+        "id": 102,
+        "title": "Clean Code",
+        "author": "Robert C. Martin",
+        "category": "Programming",
+        "available_copies": 2
+    },
+    {
+        "id": 103,
+        "title": "The Hobbit",
+        "author": "J. R. R. Tolkien",
+        "category": "Fantasy",
+        "available_copies": 4
+    },
+    {
+        "id": 104,
+        "title": "Pride and Prejudice",
+        "author": "Jane Austen",
+        "category": "Classic Fiction",
+        "available_copies": 2
+    },
+    {
+        "id": 105,
+        "title": "A Brief History of Time",
+        "author": "Stephen Hawking",
+        "category": "Science",
+        "available_copies": 1
+    }
+]
