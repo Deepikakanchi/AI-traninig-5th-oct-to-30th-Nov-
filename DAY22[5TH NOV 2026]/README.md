@@ -2,26 +2,32 @@
 
 This repository contains four small AI assistant projects. Each one uses tools to work with local JSON data, so the model looks up real records instead of inventing details.
 
-| # | Project | What it does | Stack | Model provider |
-|---|---|---|---|---|
-| 1 | [AI Library Assistant](#1-ai-library-assistant) | Search a book catalog and make reservations through a chat UI | React (Vite) + FastAPI | OpenRouter |
-| 2 | [LangChain Workshop Agent (Guarded + Basic)](#2-langchain-workshop-agent-guarded--basic) | Search workshops and calculate fees from the command line | LangChain | OpenAI |
-| 3 | [LangChain Workshop AI Agent (PII Guardrails)](#3-langchain-workshop-ai-agent-pii-guardrails) | Search workshops, calculate fees, and filter personal data | LangChain + LangGraph | OpenAI |
-| 4 | [LangChain Workshop AI Agent (Coupons)](#4-langchain-workshop-ai-agent-coupons) | Search and list workshops, find the cheapest, calculate fees, and apply coupon codes | LangChain + LangGraph | OpenAI |
-
-> Folder names below are placeholders. Replace them with the actual folder names in your repository.
+| # | Folder | Project | What it does | Stack | Model provider |
+|---|---|---|---|---|---|
+| 1 | [`react+rag`](./react+rag/) | [AI Library Assistant](#1-ai-library-assistant) | Search a book catalog and make reservations through a chat UI | React (Vite) + FastAPI | OpenRouter |
+| 2 | [`ai agent project1 [ tainer project]`](./ai%20agent%20project1%20%5B%20tainer%20project%5D/) | [LangChain Workshop Agent (Guarded + Basic)](#2-langchain-workshop-agent-guarded--basic) | Search workshops and calculate fees from the command line | LangChain | OpenAI |
+| 3 | [`ai agent project end to end`](./ai%20agent%20project%20end%20to%20end/) | [LangChain Workshop AI Agent (PII Guardrails)](#3-langchain-workshop-ai-agent-pii-guardrails) | Search workshops, calculate fees, and filter personal data | LangChain + LangGraph | OpenAI |
+| 4 | [`ai agent with updated tools`](./ai%20agent%20with%20updated%20tools/) | [LangChain Workshop AI Agent (Coupons)](#4-langchain-workshop-ai-agent-coupons) | Search and list workshops, find the cheapest, calculate fees, and apply coupon codes | LangChain + LangGraph | OpenAI |
 
 ## Repository structure
 
 ```text
 .
-├── library-ai-assistant/          # Project 1
-│   ├── frontend--/                # React chat interface
+├── react+rag/                              # Project 1: AI Library Assistant
+│   ├── frontend--/                         # React chat interface
 │   └── Library_AI_Agent/
-│       └── Library_AI_Agent/      # FastAPI backend
-├── workshop-agent/                # Project 2
-├── workshop-agent-guardrails/     # Project 3
-└── workshop-agent-coupons/        # Project 4
+│       └── Library_AI_Agent/               # FastAPI backend
+├── ai agent project1 [ tainer project]/    # Project 2: Workshop Agent (Guarded + Basic)
+├── ai agent project end to end/            # Project 3: Workshop Agent (PII Guardrails)
+├── ai agent with updated tools/            # Project 4: Workshop Agent (Coupons)
+├── MAIN.txt                                # Day 22 work files
+└── README.md                               # This file
+```
+
+Because some folder names contain spaces and brackets, wrap them in quotes when using `cd`, for example:
+
+```powershell
+cd "ai agent with updated tools"
 ```
 
 ## Common requirements
@@ -35,6 +41,8 @@ Every project reads its API key from a local `.env` file. Keep `.env` files priv
 ---
 
 ## 1. AI Library Assistant
+
+**Folder:** `react+rag`
 
 A full-stack library assistant with a React chat interface and a Python API. Users can search for books and request a reservation, which must be confirmed before it is saved.
 
@@ -57,7 +65,7 @@ A full-stack library assistant with a React chat interface and a Python API. Use
 
 ### Setup
 
-**Backend**
+**Backend** (from the `react+rag` folder)
 
 ```powershell
 cd .\Library_AI_Agent\Library_AI_Agent
@@ -107,6 +115,8 @@ Open the URL printed by Vite (usually `http://localhost:5173`). To point the fro
 ---
 
 ## 2. LangChain Workshop Agent (Guarded + Basic)
+
+**Folder:** `ai agent project1 [ tainer project]`
 
 A command-line workshop enquiry assistant built with LangChain. It searches a local workshop catalog and calculates fees in INR using tools.
 
@@ -164,6 +174,8 @@ Fee calculations support 1–100 participants.
 
 ## 3. LangChain Workshop AI Agent (PII Guardrails)
 
+**Folder:** `ai agent project end to end`
+
 A lightweight conversational assistant built with LangChain and LangGraph. It searches workshops, calculates total fees, and protects personal contact details.
 
 ### Features
@@ -206,6 +218,8 @@ python agent.py
 ---
 
 ## 4. LangChain Workshop AI Agent (Coupons)
+
+**Folder:** `ai agent with updated tools`
 
 An extended version of the Project 3 agent, built with LangChain and LangGraph. Along with workshop search and fee calculation, it can list the full catalog, find the cheapest workshop, and apply coupon codes.
 
