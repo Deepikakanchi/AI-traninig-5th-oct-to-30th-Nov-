@@ -1,90 +1,109 @@
-# LangChain Workshop Agent
+# AI Library Assistant
 
-A command-line workshop enquiry assistant built with LangChain. It searches a local JSON catalog and calculates workshop fees in INR using tools, rather than relying on the model to invent workshop details or prices.
+A full-stack library assistant with a React chat interface and a Python API. Ask the assistant to find books, or request a reservation and confirm it before it is saved.
 
-The project includes two modes:
+## Features
 
-- **Guarded assistant** (`agent_guarded.py`): restricts requests to workshop-related topics and requires tool evidence for workshop details and fees. Recommended for normal use.
-- **Basic assistant** (`agent.py`): a minimal tool-calling example with conversation memory.
+- Search the library catalog by book title, author, or category.
+- Chat with an AI assistant powered by a model available through OpenRouter.
+- Review and confirm or cancel a reservation before it is finalized.
+- Store the catalog and reservations locally as JSON files.
 
-Neither mode can book workshops or accept payments.
+## Project structure
+
+```text
+frontend--/
+  src/                         React application
+  package.json                 Frontend scripts and dependencies
+Library_AI_Agent/
+  Library_AI_Agent/
+    api.py                     FastAPI endpoints
+    agent.py                   Command-line agent
+    tools.py                   Catalog search and reservation logic
+    books.json                 Book catalog
+    reservations.json          Reservation records
+    requirements.txt           Python package requirements
+```
 
 ## Requirements
 
 - Python 3.10 or later
-- An OpenAI API key to run either assistant
+- Node.js and npm
+- An OpenRouter API key and a model identifier supported by your account
 
 ## Setup
 
-Open PowerShell in the project directory and run:
+Run the following commands from the project directory containing `frontend--` and `Library_AI_Agent`.
+
+### 1. Configure and start the backend
 
 ```powershell
-py -m venv .venv
+cd .\Library_AI_Agent\Library_AI_Agent
+python -m venv .venv
 .\.venv\Scripts\Activate.ps1
-python -m pip install -r requirements.txt
-Copy-Item .env.example .env
+python -m pip install -r requirements.txt fastapi uvicorn pydantic
 ```
 
-Edit `.env` and set your OpenAI API key:
+Create a `.env` file in `Library_AI_Agent\Library_AI_Agent` with your own OpenRouter credentials:
 
 ```dotenv
-OPENAI_API_KEY=your_openai_api_key
-OPENAI_MODEL=gpt-4o-mini
+OPENROUTER_API_KEY=your_openrouter_api_key
+OPENROUTER_MODEL=your_openrouter_model
 ```
 
-`OPENAI_MODEL` is optional; if omitted, the assistant uses `gpt-4o-mini`. Keep `.env` private and do not commit your API key.
-
-## Run
-
-Start the guarded assistant:
+Start the API:
 
 ```powershell
-python agent_guarded.py
+python -m uvicorn api:app --reload --host 127.0.0.1 --port 8000
 ```
 
-Or start the basic assistant:
+The API is available at `http://127.0.0.1:8000`. Interactive API documentation is available at `http://127.0.0.1:8000/docs`.
+
+### 2. Start the frontend
+
+In a second terminal, return to the project directory and run:
 
 ```powershell
-python agent.py
+cd .\frontend--
+npm install
+npm run dev
 ```
 
-Example questions:
+Open the local URL printed by Vite (usually `http://localhost:5173`).
 
-- `Show me Python workshops`
-- `How much would W101 cost for 4 participants?`
-- If the assistant asks for a participant count, reply with a number such as `4`.
+The frontend uses `http://127.0.0.1:8000` by default. To use a different backend URL, create `frontend--\.env` and set:
 
-Enter `/new` to start a fresh conversation or `exit` to quit. Conversation memory is held in memory while the program runs; it is not saved between runs.
+```dotenv
+VITE_API_URL=http://127.0.0.1:8000
+```
 
-## Workshop catalog
+Restart the Vite development server after changing frontend environment variables.
 
-The assistant reads workshop data from [`workshops.json`](./workshops.json).
+## API endpoints
 
-| ID | Workshop | Duration | Mode | Fee per person |
-|---|---|---:|---|---:|
-| W101 | Python Automation Essentials | 2 days | Online | INR 3,000 |
-| W102 | Generative AI Fundamentals | 1 day | Online | INR 4,000 |
-| W103 | Power BI Dashboards | 2 days | Classroom | INR 3,500 |
-| W104 | Azure AI Basics | 2 days | Online | INR 4,500 |
+| Method | Endpoint | Purpose |
+|---|---|---|
+| `GET` | `/health` | Check that the API is running |
+| `POST` | `/chat` | Send a chat message and receive an assistant response |
+| `POST` | `/confirm-reservation` | Confirm or cancel a pending reservation |
 
-Fee calculations support 1–100 participants. Update the JSON catalog to change workshop details or prices.
+## Frontend scripts
 
-## Run local tool tests
-
-The tool tests do not make OpenAI API calls and can be run before configuring an API key:
+Run these commands from `frontend--`:
 
 ```powershell
-python test_tools.py
+npm run dev      # Start the Vite development server
+npm run build    # Create a production build in dist/
+npm run preview  # Preview the production build locally
+npm run lint     # Run Oxlint
 ```
 
-The tests cover catalog search, a fee calculation, an unknown workshop ID, and an invalid participant count.
+## Data files
 
-## Project files
+The catalog is stored in `Library_AI_Agent\Library_AI_Agent\books.json`, and completed reservations are stored in `reservations.json`. A successful reservation appends to the reservation file and decreases the corresponding book's `available_copies` value. Back up these files before editing or resetting the sample data.
 
-- [`agent_guarded.py`](./agent_guarded.py) — workshop-only assistant with input/output guardrails.
-- [`agent.py`](./agent.py) — basic LangChain tool-calling assistant.
-- [`tools.py`](./tools.py) — catalog search and fee-calculation tools.
-- [`workshops.json`](./workshops.json) — workshop catalog data.
-- [`test_tools.py`](./test_tools.py) — local tests for the tools.
-- [`requirements.txt`](./requirements.txt) — Python dependencies.
-- [`.env.example`](./.env.example) — template for local environment settings.
+## Troubleshooting
+
+- **Backend exits during startup:** Check that the backend `.env` file contains both `OPENROUTER_API_KEY` and `OPENROUTER_MODEL`.
+- **Frontend cannot reach the API:** Make sure the backend is running on port `8000`, or set `VITE_API_URL` to the correct API base URL.
+- **Python import or server errors:** Activate the virtual environment and install the backend packages using the command in the setup section.
