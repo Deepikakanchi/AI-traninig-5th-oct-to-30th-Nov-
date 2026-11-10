@@ -1,0 +1,187 @@
+Enter a customer request. Submit a blank line to exit.
+
+Customer request: Recommend 2 laptops within ₹1,20,000 total.
+
+--- Inventory Agent ---
+Matching products (Laptop):
+- P101 | NovaBook Air 14 | Price: ₹52,000 | Available stock: 8 | Rating: 4.5/5
+- P102 | Orion Pro 15 | Price: ₹68,000 | Available stock: 3 | Rating: 4.8/5
+- P103 | PixelEdge Lite 13 | Price: ₹41,000 | Available stock: 0 | Rating: 4.1/5
+- P104 | Atlas Work 14 | Price: ₹59,000 | Available stock: 12 | Rating: 4.7/5
+- P105 | TerraBook Studio 16 | Price: ₹92,000 | Available stock: 5 | Rating: 4.9/5
+- P106 | SwiftCore Student 14 | Price: ₹34,500 | Available stock: 20 | Rating: 4.2/5
+
+--- Pricing Agent ---
+Quantity requested: 2 per product.
+Budget: ₹1,20,000.
+- Product ID: P101 | Quantity: 2 | Calculated total: ₹1,04,000 | Budget validation: Within budget
+- Product ID: P102 | Quantity: 2 | Calculated total: ₹1,36,000 | Budget validation: Over budget
+- Product ID: P103 | Quantity: 2 | Calculated total: ₹82,000 | Budget validation: Insufficient stock
+- Product ID: P104 | Quantity: 2 | Calculated total: ₹1,18,000 | Budget validation: Within budget
+- Product ID: P105 | Quantity: 2 | Calculated total: ₹1,84,000 | Budget validation: Over budget
+- Product ID: P106 | Quantity: 2 | Calculated total: ₹69,000 | Budget validation: Within budget
+Selected product IDs within budget: P101, P104, P106.
+
+--- Recommendation Agent ---
+Recommended product: Atlas Work 14 (ID: P104)
+Price and quantity: ₹59,000 x 2 = ₹1,18,000
+Customer rating: 4.7/5
+Reason: Highest-rated product that is in stock and within budget.
+
+Customer request: Find 3 smartphones within ₹1,00,000 total.
+
+--- Inventory Agent ---
+Matching products (Smartphone):
+- P107 | Nova One 5G | Price: ₹28,000 | Available stock: 15 | Rating: 4.4/5
+- P108 | Orion Max 5G | Price: ₹54,000 | Available stock: 8 | Rating: 4.8/5
+- P109 | Cobalt Mini 5G | Price: ₹19,000 | Available stock: 0 | Rating: 4.1/5
+- P110 | Terra Ultra 5G | Price: ₹72,000 | Available stock: 4 | Rating: 4.9/5
+- P111 | Pulse Lite 5G | Price: ₹16,500 | Available stock: 23 | Rating: 4.0/5
+- P112 | Atlas Camera 5G | Price: ₹38,000 | Available stock: 10 | Rating: 4.6/5
+
+--- Pricing Agent ---
+Quantity requested: 3 per product.
+Budget: ₹1,00,000.
+- Product ID: P107 | Quantity: 3 | Calculated total: ₹84,000 | Budget validation: Within budget
+- Product ID: P108 | Quantity: 3 | Calculated total: ₹1,62,000 | Budget validation: Over budget
+- Product ID: P109 | Quantity: 3 | Calculated total: ₹57,000 | Budget validation: Insufficient stock
+- Product ID: P110 | Quantity: 3 | Calculated total: ₹2,16,000 | Budget validation: Over budget
+- Product ID: P111 | Quantity: 3 | Calculated total: ₹49,500 | Budget validation: Within budget
+- Product ID: P112 | Quantity: 3 | Calculated total: ₹1,14,000 | Budget validation: Over budget
+Selected product IDs within budget: P107, P111.
+
+--- Recommendation Agent ---
+Recommended product: Nova One 5G (ID: P107)
+Price and quantity: ₹28,000 x 3 = ₹84,000
+Customer rating: 4.4/5
+Reason: Highest-rated product that is in stock and within budget.
+
+Customer request: Recommend 2 monitors within ₹50,000 total.
+
+--- Inventory Agent ---
+Matching products (Monitor):
+- P117 | PixelView 24 FHD | Price: ₹12,500 | Available stock: 20 | Rating: 4.4/5
+- P118 | NovaView 27 QHD | Price: ₹24,500 | Available stock: 13 | Rating: 4.7/5
+- P119 | OrionView 32 4K | Price: ₹39,000 | Available stock: 3 | Rating: 4.8/5
+- P120 | TerraView 22 FHD | Price: ₹9,900 | Available stock: 0 | Rating: 4.0/5
+
+--- Pricing Agent ---
+Quantity requested: 2 per product.
+Budget: ₹50,000.
+- Product ID: P117 | Quantity: 2 | Calculated total: ₹25,000 | Budget validation: Within budget
+- Product ID: P118 | Quantity: 2 | Calculated total: ₹49,000 | Budget validation: Within budget
+- Product ID: P119 | Quantity: 2 | Calculated total: ₹78,000 | Budget validation: Over budget
+- Product ID: P120 | Quantity: 2 | Calculated total: ₹19,800 | Budget validation: Insufficient stock
+Selected product IDs within budget: P117, P118.
+
+--- Recommendation Agent ---
+Recommended product: NovaView 27 QHD (ID: P118)
+Price and quantity: ₹24,500 x 2 = ₹49,000
+Customer rating: 4.7/5
+Reason: Highest-rated product that is in stock and within budget.
+
+Customer request: Find 5 headphones under ₹20,000 total.
+
+--- Inventory Agent ---
+Matching products (Headphones):
+- P121 | EchoBeat Wireless | Price: ₹3,200 | Available stock: 30 | Rating: 4.3/5
+- P122 | OrionSound ANC | Price: ₹12,500 | Available stock: 6 | Rating: 4.8/5
+- P123 | NovaPods Studio | Price: ₹7,900 | Available stock: 15 | Rating: 4.6/5
+- P124 | Pulse Audio Basic | Price: ₹1,800 | Available stock: 0 | Rating: 3.9/5
+
+--- Pricing Agent ---
+Quantity requested: 5 per product.
+Budget: ₹20,000.
+- Product ID: P121 | Quantity: 5 | Calculated total: ₹16,000 | Budget validation: Within budget
+- Product ID: P122 | Quantity: 5 | Calculated total: ₹62,500 | Budget validation: Over budget
+- Product ID: P123 | Quantity: 5 | Calculated total: ₹39,500 | Budget validation: Over budget
+- Product ID: P124 | Quantity: 5 | Calculated total: ₹9,000 | Budget validation: Insufficient stock
+Selected product IDs within budget: P121.
+
+--- Recommendation Agent ---
+Recommended product: EchoBeat Wireless (ID: P121)
+Price and quantity: ₹3,200 x 5 = ₹16,000
+Customer rating: 4.3/5
+Reason: Highest-rated product that is in stock and within budget.
+
+Customer request: Recommend 2 tablets under ₹60,000 total.
+
+--- Inventory Agent ---
+Matching products (Tablet):
+- P113 | NovaTab 10 | Price: ₹21,000 | Available stock: 10 | Rating: 4.2/5
+- P114 | OrionTab Pro 12 | Price: ₹46,500 | Available stock: 5 | Rating: 4.8/5
+- P115 | TerraPad Mini | Price: ₹17,500 | Available stock: 0 | Rating: 4.0/5
+- P116 | AtlasTab Work | Price: ₹32,500 | Available stock: 11 | Rating: 4.5/5
+
+--- Pricing Agent ---
+Quantity requested: 2 per product.
+Budget: ₹60,000.
+- Product ID: P113 | Quantity: 2 | Calculated total: ₹42,000 | Budget validation: Within budget
+- Product ID: P114 | Quantity: 2 | Calculated total: ₹93,000 | Budget validation: Over budget
+- Product ID: P115 | Quantity: 2 | Calculated total: ₹35,000 | Budget validation: Insufficient stock
+- Product ID: P116 | Quantity: 2 | Calculated total: ₹65,000 | Budget validation: Over budget
+Selected product IDs within budget: P113.
+
+--- Recommendation Agent ---
+Recommended product: NovaTab 10 (ID: P113)
+Price and quantity: ₹21,000 x 2 = ₹42,000
+Customer rating: 4.2/5
+Reason: Highest-rated product that is in stock and within budget.
+
+Customer request: Find 10 printers within ₹1,00,000 total.
+
+--- Inventory Agent ---
+Matching products (Printer):
+- P125 | PrintPro Inkjet 100 | Price: ₹7,500 | Available stock: 9 | Rating: 4.1/5
+- P126 | Atlas Laser 200 | Price: ₹15,500 | Available stock: 8 | Rating: 4.6/5
+- P127 | Terra ColorJet 300 | Price: ₹21,000 | Available stock: 0 | Rating: 4.5/5
+- P128 | SwiftPrint Home | Price: ₹6,200 | Available stock: 18 | Rating: 4.0/5
+
+--- Pricing Agent ---
+Quantity requested: 10 per product.
+Budget: ₹1,00,000.
+- Product ID: P125 | Quantity: 10 | Calculated total: ₹75,000 | Budget validation: Insufficient stock
+- Product ID: P126 | Quantity: 10 | Calculated total: ₹1,55,000 | Budget validation: Insufficient stock
+- Product ID: P127 | Quantity: 10 | Calculated total: ₹2,10,000 | Budget validation: Insufficient stock
+- Product ID: P128 | Quantity: 10 | Calculated total: ₹62,000 | Budget validation: Within budget
+Selected product IDs within budget: P128.
+
+--- Recommendation Agent ---
+Recommended product: SwiftPrint Home (ID: P128)
+Price and quantity: ₹6,200 x 10 = ₹62,000
+Customer rating: 4.0/5
+Reason: Highest-rated product that is in stock and within budget.
+
+Customer request: Find 100 laptops and verify stock availability.
+
+--- Inventory Agent ---
+Matching products (Laptop):
+- P101 | NovaBook Air 14 | Price: ₹52,000 | Available stock: 8 | Rating: 4.5/5
+- P102 | Orion Pro 15 | Price: ₹68,000 | Available stock: 3 | Rating: 4.8/5
+- P103 | PixelEdge Lite 13 | Price: ₹41,000 | Available stock: 0 | Rating: 4.1/5
+- P104 | Atlas Work 14 | Price: ₹59,000 | Available stock: 12 | Rating: 4.7/5
+- P105 | TerraBook Studio 16 | Price: ₹92,000 | Available stock: 5 | Rating: 4.9/5
+- P106 | SwiftCore Student 14 | Price: ₹34,500 | Available stock: 20 | Rating: 4.2/5
+
+--- Pricing Agent ---
+Quantity requested: 100 per product.
+Budget: not specified.
+Budget validation requires both a quantity and a budget.
+
+--- Recommendation Agent ---
+Cannot recommend yet; provide the missing quantity or budget.
+
+Customer request: Recommend a product category that does not exist in the dataset.
+
+--- Inventory Agent ---
+Could not identify a product category in the request.
+
+--- Pricing Agent ---
+Quantity requested: not specified.
+Budget: not specified.
+Budget validation requires both a quantity and a budget.
+
+--- Recommendation Agent ---
+Cannot recommend yet; provide the missing quantity or budget.
+
+Customer request: 
